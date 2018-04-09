@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registern Form in PHP with Session</title>
+
+<link rel="stylesheet" type="text/css" href="login.css">
+
+<script>
+    alert("Connected");
+    function validatef()
+    {
+     
+   
+    var name=document.forms["myform"]["username"].value;
+    var passwordc=document.forms["myform"]["passwordc"].value;
+    var password=document.forms["myform"]["password"].value;
+    var city=document.forms["myform"]["city"].value;
+    var stste=document.forms["myform"]["state"].value;
+
+    if(name=="")
+    {
+    alert("Username Should not be Empty");
+    return false;
+    }
+    if(city=="")
+    {
+    alert("city Should not be Empty");
+    return false;
+    }
+    if(state=="")
+    {
+      alert("State Should not be Empty");
+    return false;
+    }ddfgf
+    
+    if(password!==passwordc)
+    {
+      alert("Password much match");
+    return false;
+    }
+    return true;
+    }
+    </script>
+    </head>
+<body>
+<div class="login-page">
+  <div class="form">
+    <form name="myform" class="login-form" method="post" onsubmit="return validatef();" action="reg.php" >
+      <input name="username" type="text" placeholder="username"/>
+      <input name="email" type="text" placeholder="email"/>
+      <input name="city" type="text" placeholder="city"/>
+      <input name="state" type="text" placeholder="state"/>
+      <input name="password" type="password" placeholder="password"/>
+      <input name="passwordc" type="password" placeholder="confirm password"/>
+      <input name="submit" type="submit" value=" Register" />
+      <p id="rerr"></p>
+    </form>
+  </div>
+</div>
+</body>
+
+</html>

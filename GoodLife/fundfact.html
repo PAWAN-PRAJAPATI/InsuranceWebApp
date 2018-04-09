@@ -1,0 +1,118 @@
+<!-- http://www.bootply.com/78010#-->
+<!--http://jsfiddle.net/mridulpv/HCxB8/-->
+<!DOCTYPE html> 
+<html> 
+<title> Fund Fact Sheets - Good Life Philippines </title> 
+<head> 
+  <link rel="stylesheet" type="text/css" href = "fundfact.css">
+  <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src = "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+  <script>
+    //alert('Connected');
+  function online1(){
+    x=document.getElementById("online1");
+    document.getElementById("details").innerHTML = "An affordable term plan that provides protection against the risk of Death, Disease and Disability."+
+                "Additional life cover at nominal cost through different type of Riders"+
+                "Pay premiums only during your working years (till age 60), get covered till age 85"+
+                "Get coverage upto Rs. 50 Lacs against specified 40 critical illnesses"+
+                "Option to get monthly income along with lumpsum"
+    //document.getElementById("online2").style.visibility="hidden";
+    ///document.getElementById("div").style.visibility="hidden";
+    ///document.getElementById("div").style.visibility="hidden";
+    f=document.getElementById("temp").value = "online1";
+    
+  }
+  function online2(){
+    x=document.getElementById("online2");
+    document.getElementById("details").innerHTML = "A comprehensive Cancer Insurance Plan that provides a payout at all stages of Cancer"+
+    "Get 10% increase in original sum assured in case of no claims for the first 5 years"+
+    "20% of Sum Insured + Waiver of premium, in early stage diagnosis"+
+    "Lumpsum payout + annual income for 5 years in major stage diagnosis"+
+    "Tax benefit under section 80D, as per prevailing tax laws"
+
+    f=document.getElementById("temp").value = "online2";
+    
+  }
+  function health(){
+    x=document.getElementById("health");
+    document.getElementById("details").innerHTML = "Health";
+    f=document.getElementById("temp").value = "health";
+    //alert(f);
+  }
+  function child(){
+    x=document.getElementById("health");
+    document.getElementById("details").innerHTML = "Safeguard your fund against market volatilities"+
+    "Guaranteed loyalty benefits at the end of each policy year"+
+    "Financial security for your child, in case of an unfortunate event";
+
+    f=document.getElementById("temp").value = "child";
+    //alert(f);
+  }
+  function detail(){
+    x=document.getElementById("health");
+    document.getElementById("details").innerHTML = "Child";
+    f=document.getElementById("temp").value = "child";
+    //alert(f);
+  }
+  function add(){
+    confirm("This plan will be added in your account");
+  }
+
+  </script>
+</head> 
+<body ng-app="fundFactApp">
+<nav class="navbar navbar-custom navbar-static-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="mainmenu.html">Good Life</a>
+  </div>
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="mainmenu.html">Home</a></li>
+      <li><a href="mydetails.php">MyAxaPedia1</a></li>
+
+      <li><a href="fundfact.html">Fund Fact Sheets</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="account.php">My Account</a></li>
+      <li><a href="logout.php">Logout</a></li>   
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+  <div ng-controller="FundFactController">
+    <form action="funds.php" method="post">
+    <div id="fundFactNames">
+      <div class="list-group panel"><!--data-parent="#SubMenu1 data-toggle="collapse"" beside datatoggle -->
+        <a href="#pesoFunds" class="list-group-item list-group-item-success" data-toggle="collapse" >Online Insurance Plans</a>
+          <div class="collapse" id="pesoFunds">
+            <a class="list-group-item" id="online1" onclick="online1()">LIFE ONLINE TERM PLAN</a>
+            <a class="list-group-item" id="online2" onclick="online2()">LIFE CANCER INSURANCE </a>
+          </div>
+        <a href="#dollarFunds" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#fundFactNames">All Insurance Plans</a>
+          <div class="collapse" id="dollarFunds">
+              <a class="list-group-item" id="health" onclick="health()">HEALTH PLANS </a>
+              <a class="list-group-item" id="child" onclick="child()">CHILD PLANS</a>
+          </div>
+        <div class="row row-offcanvas row-offcanvas-right">
+          <div class = "jumbotron">
+            <p id="details">
+                Select Plan
+            </p>
+            <input  type="submit" class="btn btn-lg btn-primary bton pull-right" value="Add" onclick="add()"/>
+          </div>
+        </div>
+    </div>
+    <input class="hidden" name="temp" type="text" id="temp">
+  </form>
+  </div>
+</div>    
+
+</body> 
+
+</html> 

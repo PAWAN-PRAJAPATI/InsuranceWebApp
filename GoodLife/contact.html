@@ -1,0 +1,74 @@
+<!-- http://www.bootply.com/78010#-->
+<!DOCTYPE html> 
+<html ml xmlns:ng="http://angularjs,org"ng-app = "ContactApp"> 
+<title> Contact - Good Life Philippines </title> 
+<head> 
+  
+  <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+  <script type= "text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+  <script type= "text/javascript" src ="http://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.0.11/angular-google-maps.min.js"> </script>
+
+
+
+  <link rel="stylesheet" type="text/css" href="contact.css">
+  <script type ="text/javascript" src="goodlife.js"></script>
+</head> 
+<body> 
+<nav class="navbar navbar-custom navbar-static-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="mainmenu.html">Good Life</a>
+  </div>
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="mainmenu.html">Home</a></li>
+      <li><a href="https://myaxabiz.my.s.ph/myaxaclick/">Axa Click</a></li>
+      <li><a href="https://axa.csod.com/alesforce.com">MyAxa Biz</a></li>
+      <li><a href="https://click.axa.comclient/axa/default.aspx">Learning@Axa</a></li>
+      <li><a href="http://knowledgebase.axa.com.ph/kb/login.php">MyAxaPedia</a></li>
+      <li><a href="fundfact.html">Fund Fact Sheets</a></li>
+      <li><a href="contact.html">Contact</a></li>   
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+<div>
+   <div class="col-md-12">
+            <div>
+                <div class="panel panel-default">
+                    <div class="text-center header">Our Office</div>
+                    <div class="panel-body text-center">
+                        <h4>Address</h4>
+                        <div>
+                        MH G 754 Vellore Institute of Technology<br />
+                        India<br />
+                        #9583758693<br />
+                        info@axa.com<br />
+                        </div>
+                        <hr />
+                        <div class="map" ng-controller="MapCtrl">
+                            <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" >
+                              <ui-gmap-markers models='markers' coords="'coords'" options="marker.options" idkey="marker.id">
+                            </ui-gmap-markers>
+                              </ui-gmap-google-map>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</body> 
+
+  </html> 
